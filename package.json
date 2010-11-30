@@ -1,0 +1,11 @@
+{
+  "name"          : "uutest",
+  "version"       : "0.3.0",
+  "description"   : "Async unit testing for JavaScript",
+  "author"        : "Aleksander Williams",
+  "contributors"  : [],
+  "url"           : "http://github.com/akdubya/uutest",
+  "keywords"      : ["unit testing"],
+  "directories"   : { "lib": "./lib" },
+  "bin"           : { "uutest": "./bin/uutest" }
+}

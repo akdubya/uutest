@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+
+var uutest = require('uutest'),
+    opts   = require('opts'),
+    fs     = require('fs'),
+    path   = require('path');
+
+var options = [
+]
+
+var args = [
+  { name: "paths" }
+]
+
+opts.parse(options, args, true);
+
+var paths = opts.args();
+
+if (!paths.length) {
+  paths = fs.readdirSync('.').filter(function(path) {
+    return /\.js$/.test(path);
+  });
+}
+
+paths.forEach(function(path) {
+  require(fs.realpathSync(path));
+});
+
+uutest.run();
